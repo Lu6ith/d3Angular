@@ -1,0 +1,29 @@
+.rect-wanbb {
+	fill: #ccc;
+}
+
+.rect-cfe {
+	fill: #143d75;
+}
+
+.rect-exmst2 {
+	fill: #2378ae;
+}
+
+.rect-action {
+	fill: #eea900;
+}
+
+.link {
+	fill: none;
+	stroke: #acacac;
+	stroke-width: 1.5px;
+}
+
+.link.cfe {
+	stroke: #84b647;
+}
+
+.link.wanbb {
+	stroke: #ee502a;
+}

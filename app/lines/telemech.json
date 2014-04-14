@@ -1,0 +1,42 @@
+{
+	"typ": "exmst2",
+	"stacja": "PDE",
+	"nazwa": "Podolszyce",
+	"system": "EX MST2",
+	"terma": "",
+	"termb": "",
+	"linie": [
+		{
+			"typ": "cfe",
+			"terma": "PCM(2) 11/1",
+			"termb": "KDM B2 12/2",
+			"opis": "Dyster podstawowy",
+			"CFE": [
+				{
+					"cfe": "CFE1",
+					"port": "10"
+				}
+			]
+		},
+		{
+			"typ": "cfe",
+			"terma": "PCM(1) 4/6",
+			"termb": "KDM A7 4/2",
+			"opis": "Dyster rezerwowy",
+			"CFE": [
+				{
+					"cfe": "CFE2",
+					"port": "10"
+				}
+			]
+		},
+		{
+			"typ": "wanbb",
+			"terma": "SSiN IEC-104",
+			"termb": "",
+			"opis": "wezeł WAN BB",
+			"CFE": [],
+			"wanbb": "1014"
+		}
+	]
+}
