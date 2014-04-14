@@ -2,6 +2,7 @@
     <div class="col-md-12"><hr></div>
 </div>
 
+<!--
 <div class="row">
     <div class="col-md-12" ng-controller="DemoCtrl3">
         <span>{{title}}</span>
@@ -23,3 +24,14 @@
         <br>
     </div>
 </div>
+-->
+<ul class="lines">
+    <li ng-repeat="line in lines" class="thumbnail line-listing">
+        <div class="col-md-12" ng-controller="TreeCtrl">
+            <span>{{line.id}}</span>
+            <d3-trees label="name" on-click="d3OnClick(item)" line="lines/{{line.id}}.json"></d3-trees>
+            <br>
+            <br>
+        </div>
+    </li>
+</ul>

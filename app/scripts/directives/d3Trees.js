@@ -8,6 +8,7 @@
         scope: {
           data: "=",
           label: "@",
+          line: "@",
           onClick: "&"
         },
         link: function(scope, iElement, iAttrs) {
@@ -104,7 +105,8 @@
                   .append("svg:path")
                   .attr("d", "M 0,0 V 6 L8,2 Z"); //this is actual shape for arrowhead
 
-            d3.json("../lines/telemech.json", function(json) {
+            //d3.json("lines/PDE.json", function(json) {
+            d3.json(scope.line, function(json) {
               var nodes = tree.nodes(json);
 
               // Normalize for fixed-depth.

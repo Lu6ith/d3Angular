@@ -35,7 +35,8 @@
         </div>
 
         <!-- Add your site or application content here -->
-        <div ng-include="'views/main.html'"></div>
+        <!--<div ng-include="'views/main.html'"></div>-->
+        <div ng-view class="viewframe"></div>
 
         <div class="footer">
             <p>Created by W.L.Ł   04.2014</p>
@@ -52,6 +53,8 @@
     <!-- bower:js -->
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
@@ -60,10 +63,12 @@
         <script src="scripts/app.js"></script>
         <!--<script src="scripts/controllers/main.js"></script>-->
         <script src="scripts/services/d3.js"></script>
+        <script src="scripts/services/services.js"></script>
         <script src="scripts/controllers/demoCtrl.js"></script>
         <script src="scripts/controllers/demoCtrl2.js"></script>
         <script src="scripts/controllers/demoCtrl3.js"></script>
         <script src="scripts/controllers/treeCtrl.js"></script>
+        <script src="scripts/controllers/controller.js"></script>
         <script src="scripts/directives/d3Basic.js"></script>
         <script src="scripts/directives/d3Trees.js"></script>
 
