@@ -136,6 +136,7 @@
 
               // Add rectangles to nodes
               node.append("rect")
+                  .on("click", function(d, i){return scope.onClick({item: d});})
                   .attr("width", Wrect)
                   .attr("height", Hrect)
                   //.attr("y", function (d) { 
