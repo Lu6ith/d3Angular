@@ -1,9 +1,22 @@
 <!--<div class="row">
     <div class="col-md-12"><hr></div>
 </div>-->
+<div class="row">
+    <div class="col-md-4 col-md-offset-6">
+    Sortowanie:
+    <select ng-model="orderProp" class="span2">
+        <option value="nazwa">Alfabetyczne</option>
+        <option value="typ">typ</option>
+    </select>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12"><hr></div>
+</div>
 
 <ul class="list-group">
-    <li ng-repeat="line in lines" class="list-group-item">
+    <li ng-repeat="line in lines | filter:query | orderBy:orderProp" class="list-group-item">
         <!--<div class="col-md-12" ng-controller="TreeCtrl">-->
             <h4 class="list-group-item-heading">{{line.id}} - {{line.nazwa}}</h4>
             <d3-trees label="name" on-click="d3OnClick(item)" line="lines/{{line.id}}.json"></d3-trees>

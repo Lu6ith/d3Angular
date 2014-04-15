@@ -7,7 +7,7 @@
         .controller('LineListCtrl', ['$scope', 'Line',
         function($scope, Line) {
             $scope.lines = Line.query();
-        //$scope.orderProp = 'age';
+            $scope.orderProp = 'typ';
         }]);
 
 }());

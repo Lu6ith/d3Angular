@@ -1,0 +1,36 @@
+{
+    "typ": "mikro",
+    "stacja": "SOC",
+    "nazwa": "Sochaczew",
+    "system": "MIKRO.P",
+    "terma": "",
+    "termb": "",
+    "cfe": "",
+    "port": "",
+    "linie": [
+        {
+            "typ": "cfe",
+            "terma": "PCM(2) 6/1",
+            "termb": "KDM B3 7/1",
+            "opis": "Dyster podstawowy",
+            "cfe": "CFE1",
+            "port": "11"
+        },
+        {
+            "typ": "cfe",
+            "terma": "PCM(1) 5/2",
+            "termb": "KDM A4 8/8",
+            "opis": "Dyster rezerwowy",
+            "cfe": "CFE2",
+            "port": "11"
+        },
+        {
+            "typ": "wanbb",
+            "terma": "SSiN IEC-104",
+            "termb": "",
+            "opis": "wezeł WAN BB",
+            "cfe": "",
+            "port": "1001"
+        }
+    ]
+}

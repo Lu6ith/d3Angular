@@ -1,0 +1,28 @@
+{
+    "typ": "utj",
+    "stacja": "ROG2",
+    "nazwa": "Rogowiec",
+    "system": "UTJ",
+    "terma": "",
+    "termb": "",
+    "cfe": "",
+    "port": "",
+    "linie": [
+        {
+            "typ": "convutj",
+            "terma": "ROG(3) 4/2",
+            "termb": "KDM A8 6/4",
+            "opis": "Tor podstawowy",
+            "cfe": "SPLIT",
+            "port": "1"
+        },
+        {
+            "typ": "convutj",
+            "terma": "ROG(2) 10/2",
+            "termb": "KDM B4 12/3",
+            "opis": "Tor rezerwowy",
+            "cfe": "SPLIT",
+            "port": "1"
+        }
+    ]
+}

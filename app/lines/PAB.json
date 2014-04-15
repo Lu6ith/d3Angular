@@ -1,0 +1,28 @@
+{
+    "typ": "utj",
+    "stacja": "PAB",
+    "nazwa": "Pabianice",
+    "system": "UTJ",
+    "terma": "",
+    "termb": "",
+    "cfe": "",
+    "port": "",
+    "linie": [
+        {
+            "typ": "convutj",
+            "terma": "PAB(1) 3/2",
+            "termb": "KDM A GÓRA 2/6",
+            "opis": "Tor podstawowy",
+            "cfe": "SPLIT",
+            "port": "7"
+        },
+        {
+            "typ": "convutj",
+            "terma": "PAB(2) 11/1",
+            "termb": "KDM B8 15/3",
+            "opis": "Tor rezerwowy",
+            "cfe": "SPLIT",
+            "port": "7"
+        }
+    ]
+}

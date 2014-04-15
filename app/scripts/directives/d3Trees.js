@@ -216,15 +216,17 @@
               };
             
               function Wrect(d) {
-                if (d.typ == "exmst2") {return 80};
+                if (d.typ == "exmst2" || d.typ == 'mikro') {return 80};
                 if (d.typ == "cfe") {return 80};
                 if (d.typ == "wanbb") {return 80};
+                if (d.typ == "utj" || d.typ == "convutj") {return 80};
               };
 
               function Hrect(d) {
-                if (d.typ == "exmst2") {return 40};
+                if (d.typ == "exmst2" || d.typ == 'mikro') {return 40};
                 if (d.typ == "cfe") {return 40};
                 if (d.typ == "wanbb") {return 40};
+                if (d.typ == "utj" || d.typ == "convutj") {return 40};
               };
 
               function typy (d) { return d.typ; };

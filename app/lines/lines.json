@@ -2,11 +2,49 @@
     {
         "age": 0,
         "id": "PDE",
+        "typ": "exmst2",
         "nazwa": "SE Podolszyce 220/110kV"
     },
     {
         "age": 0,
         "id": "TRE",
+        "typ": "exmst2",
         "nazwa": "SE Trębaczew 400/110kV"
+    },
+    {
+        "age": 0,
+        "id": "ROG2",
+        "typ": "utj",
+        "nazwa": "SE Rogowiec 220kV"
+    },
+    {
+        "age": 0,
+        "id": "ROG4",
+        "typ": "utj",
+        "nazwa": "SE Rogowiec 400kV"
+    },
+    {
+        "age": 0,
+        "id": "EBE",
+        "typ": "utj",
+        "nazwa": "EL Bełchatów"
+    },
+    {
+        "age": 0,
+        "id": "PAB",
+        "typ": "utj",
+        "nazwa": "SE Pabianice 220/110kV"
+    },
+    {
+        "age": 0,
+        "id": "MOR",
+        "typ": "mikro",
+        "nazwa": "SE Mory 220/110kV"
+    },
+    {
+        "age": 0,
+        "id": "SOC",
+        "typ": "mikro",
+        "nazwa": "SE Sochaczew 220/110kV"
     }
 ]

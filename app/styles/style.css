@@ -10,6 +10,18 @@
 	fill: #2696d5;
 }
 
+.rect-mikro {
+    fill: #a4413a;
+}
+
+.rect-utj {
+    fill: #e3ce09;
+}
+
+.rect-convutj {
+    fill: #b29802;
+}
+
 .rect-action {
 	fill: #eea900;
 }
@@ -26,6 +38,10 @@
 
 .link.wanbb {
 	stroke: #ee502a;
+}
+
+.link.convutj {
+    stroke: #6c6e3e;
 }
 
 h4.list-group-item-heading {
