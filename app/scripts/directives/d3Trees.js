@@ -14,7 +14,7 @@
         link: function(scope, iElement, iAttrs) {
           var margin = {top: 0, right: 220, bottom: 20, left: 20},
               width = 960 - margin.left - margin.right,
-              height = 240 - margin.top - margin.bottom,
+              height = 200 - margin.top - margin.bottom,
               duration = 750;
               //rectW = 85,
               //rectH = 85;
@@ -103,7 +103,21 @@
                   .style("stroke", "#84b647")
                   .style("fill", "#84b647")
                   .append("svg:path")
-                  .attr("d", "M 0,0 V 6 L8,2 Z"); //this is actual shape for arrowhead
+                  .attr("d", "M 0,0 V 6 L8,3 Z"); //this is actual shape for arrowhead
+
+            svg.append("svg:defs").selectAll("marker")
+                  .data(["arrow"])
+                  .enter().append("svg:marker")
+                  .attr("id", "arrowhead2")
+                  .attr("refX", 9) /*must be smarter way to calculate shift*/
+                  .attr("refY", 3)
+                  .attr("markerWidth", 8)
+                  .attr("markerHeight", 6)
+                  .attr("orient", "auto")
+                  .style("stroke", "#ee502a")
+                  .style("fill", "#ee502a")
+                  .append("svg:path")
+                  .attr("d", "M 0,0 V 6 L8,3 Z"); //this is actual shape for arrowhead
 
             //d3.json("lines/PDE.json", function(json) {
             d3.json(scope.line, function(json) {
@@ -141,22 +155,41 @@
                   .attr("dy", ".35em")
                   .attr("text-anchor", "middle")
                   .text(function (d) {
-                    return d.stacja;
+                    return d.system;
                   });
 
-              node.append("text")
+              /*node.append("text")
                   .attr("x", 8)
                   .attr("y", -18)
                   .attr("dy", ".71em")
-                  .attr("class", "about lifespan")
-                  .text(function(d) { return d.typ; });
+                  .attr("class", "about typ")
+                  .text(function(d) { return d.typ; });*/
+
+              //if (nodes.typ == 'cfe') {
+                  node.append("text")
+                      .attr("class", "cfe")
+                      .attr("x", 40)
+                      .attr("y", 20)
+                      .attr("dy", ".35em")
+                      .attr("text-anchor", "middle")
+                      .text(function (d) {
+                          return d.cfe + " " + d.port;
+                      });
+              //};
 
               node.append("text")
                   .attr("x", -200)
-                  .attr("y", 8)
+                  .attr("y", 10)
                   .attr("dy", "1.86em")
-                  .attr("class", "about location")
+                  .attr("class", "about terms")
                   .text(function(d) { return d.terma + " -> " + d.termb; });
+
+              node.append("text")
+                  .attr("x", -200)
+                  .attr("y", -4)
+                  .attr("dy", "1.86em")
+                  .attr("class", "about opis")
+                  .text(function(d) { return d.opis; });
 
               var link = svg.selectAll(".link")
                   .data(tree.links(nodes));
@@ -164,7 +197,9 @@
               link.enter().insert("path", "g")
                   .attr("class", function (d) {return "link " + d.target.typ;})
                   .attr("d", elbow)
-                  .attr("marker-end", "url(#arrowhead1)")
+                  .attr("marker-end", function (d) {
+                      return (d.target.typ == "cfe" ? "url(#arrowhead1)" : "url(#arrowhead2)");
+                  })
                   .style("filter", "url(#drop-shadow)");
 
               function elbow(d, i) {
@@ -175,9 +210,9 @@
                 //console.log("source.x - " + d.source.x, "source.y - " + d.source.y, Wd, Hd, i);
                 //console.log("target.x - " + d.target.x, "target.y - " + d.target.y);
                 return "M" + (d.source.y + Wd) + "," + (d.source.x + (Hd /4) * (i + 1) )
-                     + "H" + (d.target.y - 200) + "V" + (d.target.x + Hd / 2 )
+                     + "H" + (d.target.y - 240) + "V" + (d.target.x + Hd / 2 )
                      //+ (d.target.children ? "" : "h" + 200); //margin.right);
-                     + "h" + 200;
+                     + "h" + 240;
               };
             
               function Wrect(d) {
@@ -190,7 +225,9 @@
                 if (d.typ == "exmst2") {return 40};
                 if (d.typ == "cfe") {return 40};
                 if (d.typ == "wanbb") {return 40};
-              }
+              };
+
+              function typy (d) { return d.typ; };
 
             });
             

@@ -5,38 +5,32 @@
 	"system": "EX MST2",
 	"terma": "",
 	"termb": "",
+    "cfe": "",
+    "port": "",
 	"linie": [
 		{
 			"typ": "cfe",
 			"terma": "PCM(2) 11/1",
 			"termb": "KDM B2 12/2",
-			"opis": "Dyster podstawowy",
-			"CFE": [
-				{
-					"cfe": "CFE1",
-					"port": "10"
-				}
-			]
+			"opis": "Dyster rezerwowy",
+			"cfe": "CFE1",
+			"port": "10"
 		},
 		{
 			"typ": "cfe",
 			"terma": "PCM(1) 4/6",
 			"termb": "KDM A7 4/2",
-			"opis": "Dyster rezerwowy",
-			"CFE": [
-				{
-					"cfe": "CFE2",
-					"port": "10"
-				}
-			]
+			"opis": "Dyster podstawowy",
+			"cfe": "CFE2",
+			"port": "10"
 		},
 		{
 			"typ": "wanbb",
 			"terma": "SSiN IEC-104",
 			"termb": "",
 			"opis": "wezeł WAN BB",
-			"CFE": [],
-			"wanbb": "1014"
+			"cfe": "",
+			"port": "1002"
 		}
 	]
 }

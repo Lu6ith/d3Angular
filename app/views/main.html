@@ -1,37 +1,12 @@
-<div class="row">
+<!--<div class="row">
     <div class="col-md-12"><hr></div>
-</div>
+</div>-->
 
-<!--
-<div class="row">
-    <div class="col-md-12" ng-controller="DemoCtrl3">
-        <span>{{title}}</span>
-        <d3-bars1 data="d3Data" label="name" on-click="d3OnClick(item)"></d3-bars1>
-        <br>
-        <br>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md-12"><hr></div>
-</div>
-
-<div class="row">
-    <div class="col-md-12" ng-controller="TreeCtrl">
-        <span>{{title}}</span>
-        <d3-trees label="name" on-click="d3OnClick(item)"></d3-trees>
-        <br>
-        <br>
-    </div>
-</div>
--->
-<ul class="lines">
-    <li ng-repeat="line in lines" class="thumbnail line-listing">
-        <div class="col-md-12" ng-controller="TreeCtrl">
-            <span>{{line.id}}</span>
+<ul class="list-group">
+    <li ng-repeat="line in lines" class="list-group-item">
+        <!--<div class="col-md-12" ng-controller="TreeCtrl">-->
+            <h4 class="list-group-item-heading">{{line.id}} - {{line.nazwa}}</h4>
             <d3-trees label="name" on-click="d3OnClick(item)" line="lines/{{line.id}}.json"></d3-trees>
-            <br>
-            <br>
-        </div>
+        <!--</div>-->
     </li>
 </ul>

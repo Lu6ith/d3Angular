@@ -1,13 +1,13 @@
 .rect-wanbb {
-	fill: #ccc;
+	fill: #b0aa72;
 }
 
 .rect-cfe {
-	fill: #143d75;
+	fill: #6c9569;
 }
 
 .rect-exmst2 {
-	fill: #2378ae;
+	fill: #2696d5;
 }
 
 .rect-action {
@@ -26,4 +26,29 @@
 
 .link.wanbb {
 	stroke: #ee502a;
+}
+
+h4.list-group-item-heading {
+    background: #a7dca2;
+}
+
+text.cfe {
+    font-size: 12px;
+    font-weight: bold;
+    color: #fcfcfc;
+    fill: #fcfcfc;
+}
+
+text.terms {
+    font-size: 12px;
+    font-weight: bold;
+    color: #1c1b28;
+    fill: #1c1b28;
+}
+
+text.opis {
+    font-size: 11px;
+    font-weight: bold;
+    color: #7c7c64;
+    fill: #7c7c64;
 }
