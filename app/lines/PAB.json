@@ -14,7 +14,14 @@
             "termb": "KDM A GÓRA 2/6",
             "opis": "Tor podstawowy",
             "cfe": "SPLIT",
-            "port": "7"
+            "port": "7",
+            "adresrtu": [
+                {
+                    "port": "23",
+                    "adres": "1003",
+                    "pred": "9600"
+                }
+            ]
         },
         {
             "typ": "convutj",
@@ -22,7 +29,14 @@
             "termb": "KDM B8 15/3",
             "opis": "Tor rezerwowy",
             "cfe": "SPLIT",
-            "port": "7"
+            "port": "7",
+            "adresrtu": [
+                {
+                    "port": "23",
+                    "adres": "1003",
+                    "pred": "9600"
+                }
+            ]
         }
     ]
 }

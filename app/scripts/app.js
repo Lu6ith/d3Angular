@@ -6,7 +6,8 @@
     'ngRoute',
     'myApp.controllers',
     'myApp.directives',
-    'myApp.services'
+    'myApp.services',
+    'ui.bootstrap'
     ]);
 
   // setup dependency injection

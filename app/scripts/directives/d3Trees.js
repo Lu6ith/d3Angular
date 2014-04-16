@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('myApp.directives')
-    .directive('d3Trees', ['d3', function(d3) {
+    .directive('d3Trees', ['d3', '$compile', function(d3, $compile) {
       return {
         restrict: 'EA',
         scope: {
@@ -123,9 +123,12 @@
             d3.json(scope.line, function(json) {
               var nodes = tree.nodes(json);
 
+              var stac;
               // Normalize for fixed-depth.
               //nodes.forEach(function (d) {
-              //  d.x = (d.depth * 120);
+                //if (d.stacja != "") {
+                  // stac = d.stacja;
+                //};
               //});
               
               var node = svg.selectAll(".node")
@@ -136,12 +139,16 @@
 
               // Add rectangles to nodes
               node.append("rect")
-                  .on("click", function(d, i){return scope.onClick({item: d});})
+                  .on("click", function(d){return scope.onClick({item: d});})
                   .attr("width", Wrect)
                   .attr("height", Hrect)
                   //.attr("y", function (d) { 
                   //    if (d.typ == "cfe" || d.typ == "wanbb") {return 50};
                   //  })
+                  //.attr("tooltip-append-to-body", true)
+                  //.attr("tooltip", function(d){
+                  //    return d.typ;
+                  //})
                   .attr("class", function (d) {
                       return "rect-" + d.typ;
                     })
@@ -203,7 +210,7 @@
                   })
                   .style("filter", "url(#drop-shadow)");
 
-              function elbow(d, i) {
+                function elbow(d, i) {
                 var Wd, Hd, k;
                 Wd = parseInt(node.select("rect").attr("width")); 
                 Hd = parseInt(node.select("rect").attr("height"));
@@ -233,7 +240,15 @@
               function typy (d) { return d.typ; };
 
             });
-            
+              // Remove the directive, so $compile doesn't reset it
+              //iElement.removeAttr("d3-trees");
+
+              // Compile d3 code so that tooltip shows
+              //$compile(iElement)(scope);
+
+              // Re-add directive
+              //iElement.attr("d3-trees");
+
           };
         }
       };

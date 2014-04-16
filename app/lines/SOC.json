@@ -14,7 +14,14 @@
             "termb": "KDM B3 7/1",
             "opis": "Dyster podstawowy",
             "cfe": "CFE1",
-            "port": "11"
+            "port": "11",
+            "adresrtu": [
+                {
+                    "port": "11",
+                    "adres": "1040",
+                    "pred": "9600"
+                }
+            ]
         },
         {
             "typ": "cfe",
@@ -22,7 +29,14 @@
             "termb": "KDM A4 8/8",
             "opis": "Dyster rezerwowy",
             "cfe": "CFE2",
-            "port": "11"
+            "port": "11",
+            "adresrtu": [
+                {
+                    "port": "11",
+                    "adres": "1040",
+                    "pred": "9600"
+                }
+            ]
         },
         {
             "typ": "wanbb",

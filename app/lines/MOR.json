@@ -14,7 +14,14 @@
             "termb": "KDM B3 5/2",
             "opis": "Dyster podstawowy",
             "cfe": "CFE1",
-            "port": "13"
+            "port": "13",
+            "adresrtu": [
+                {
+                    "port": "13",
+                    "adres": "1000",
+                    "pred": "9600"
+                }
+            ]
         },
         {
             "typ": "cfe",
@@ -22,7 +29,14 @@
             "termb": "KDM A8 9/3",
             "opis": "Dyster rezerwowy",
             "cfe": "CFE2",
-            "port": "13"
+            "port": "13",
+            "adresrtu": [
+                {
+                    "port": "13",
+                    "adres": "1000",
+                    "pred": "9600"
+                }
+            ]
         },
         {
             "typ": "wanbb",
@@ -30,7 +44,14 @@
             "termb": "",
             "opis": "wezeł WAN BB",
             "cfe": "",
-            "port": "1008"
+            "port": "1008",
+            "adresrtu": [
+                {
+                    "port": "1008",
+                    "adres": "172.30.140.119",
+                    "pred": "2MB"
+                }
+            ]
         }
     ]
 }

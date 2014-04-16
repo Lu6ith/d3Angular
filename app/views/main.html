@@ -21,19 +21,20 @@
             <h4 class="list-group-item-heading">{{line.id}} - {{line.nazwa}}</h4>
             <d3-trees label="name" on-click="d3OnClick(item)" line="lines/{{line.id}}.json"></d3-trees>
 
-            <div id="modal{{line.id}}" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-sm">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title" id="myModalLabel">Uwagi</h4>
-                        </div>
-                        <div class="modal-body">
-                            Test to jest wielki ...
-                        </div>
-                    </div>
-                </div>
-            </div>
         <!--</div>-->
     </li>
 </ul>
+
+<div id="modalWIN" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Adresy RTU - ODM</h4>
+            </div>
+            <div class="modal-body">
+                Test to jest wielki ...
+            </div>
+        </div>
+    </div>
+</div>

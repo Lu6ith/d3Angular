@@ -14,7 +14,14 @@
             "termb": "KDM A8 6/4",
             "opis": "Tor podstawowy",
             "cfe": "SPLIT",
-            "port": "1"
+            "port": "1",
+            "adresrtu": [
+                {
+                    "port": "23",
+                    "adres": "1013",
+                    "pred": "9600"
+                }
+            ]
         },
         {
             "typ": "convutj",
@@ -22,7 +29,14 @@
             "termb": "KDM B4 12/3",
             "opis": "Tor rezerwowy",
             "cfe": "SPLIT",
-            "port": "1"
+            "port": "1",
+            "adresrtu": [
+                {
+                    "port": "23",
+                    "adres": "1013",
+                    "pred": "9600"
+                }
+            ]
         }
     ]
 }
