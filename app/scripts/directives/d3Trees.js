@@ -36,6 +36,7 @@
                 .append("svg")
                 .attr("width", width + margin.left + margin.right)
                 .attr("height", height + margin.top + margin.bottom)
+                //.attr("class", " caption")
                 .append("g")
                   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -127,8 +128,10 @@
               var node = svg.selectAll(".node")
                   .data(nodes)
                   .enter().append("g")
-                  .attr("class", "node")
+                  .attr("class", "node") //caption
                   .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
+                  .attr("data-title", "To jest tytuł !!!")
+                  .attr("data-description", "sd jnd lggf dfhghdfg sd fglkdf glkdf gfldskgldfgldfh dfh d");
 
               // Add rectangles to nodes
               node.append("rect")
@@ -143,7 +146,7 @@
                     //  return d.typ;
                   //})
                   .attr("class", function (d) {
-                      return "rect-" + d.typ;
+                      return "rect-" + d.typ ;
                     })
                   .attr("stroke-width", 2)
                   .style("filter", "url(#drop-shadow)");
