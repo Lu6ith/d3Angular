@@ -1,0 +1,57 @@
+{
+    "typ": "exmst2",
+    "stacja": "MSK",
+    "nazwa": "Mościska",
+    "system": "EX MST2",
+    "terma": "",
+    "termb": "",
+    "cfe": "",
+    "port": "",
+    "linie": [
+        {
+            "typ": "cfe",
+            "terma": "PCM(1) 7/8",
+            "termb": "KDM A4 10/3",
+            "opis": "Dyster podstawowy",
+            "cfe": "CFE2",
+            "port": "18",
+            "adresrtu": [
+                {
+                    "port": "18",
+                    "adres": "1120",
+                    "pred": "9600"
+                }
+            ]
+        },
+        {
+            "typ": "cfe",
+            "terma": "PCM(2) 11/2",
+            "termb": "KDM B3 5/4",
+            "opis": "Dyster rezerwowy",
+            "cfe": "CFE1",
+            "port": "18",
+            "adresrtu": [
+                {
+                    "port": "18",
+                    "adres": "1120",
+                    "pred": "9600"
+                }
+            ]
+        },
+        {
+            "typ": "wanbb",
+            "terma": "SSiN IEC-104",
+            "termb": "",
+            "opis": "wezeł WAN BB",
+            "cfe": "",
+            "port": "1012",
+            "adresrtu": [
+                {
+                    "port": "1012",
+                    "adres": "172.27.176.119",
+                    "pred": "2MB"
+                }
+            ]
+        }
+    ]
+}

@@ -19,13 +19,13 @@
     <li ng-repeat="line in lines | filter:query | orderBy:orderProp" class="list-group-item">
         <!--<div class="col-md-12" ng-controller="TreeCtrl">-->
             <h4 class="list-group-item-heading">{{line.id}} - {{line.nazwa}}</h4>
-            <d3-trees label="name" on-click="d3OnClick(item)" line="lines/{{line.id}}.json"></d3-trees>
+            <d3-trees label="name" on-click="d3OnClick(item, st)" line="lines/{{line.id}}.json"  stacja="{{line.id}}"></d3-trees>
 
         <!--</div>-->
     </li>
 </ul>
 
-<div id="modalWIN" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+<div id="modalWIN" class="modal fade bs-example-modal-sm in" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header">
@@ -38,3 +38,6 @@
         </div>
     </div>
 </div>
+
+<a href="#" id="popoverWIN" data-placement="right" data-trigger="hover">
+</a>

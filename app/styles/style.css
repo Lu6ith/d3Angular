@@ -32,7 +32,9 @@
 	stroke-width: 1.5px;
 }
 
-.link.cfe {
+.link.cfe,
+.link.CFE1,
+.link.CFE2 {
 	stroke: #84b647;
 }
 
@@ -67,4 +69,11 @@ text.opis {
     font-weight: bold;
     color: #7c7c64;
     fill: #7c7c64;
+}
+
+text.ip {
+    font-size: 12px;
+    font-weight: bold;
+    color: #bd3c2a;
+    fill: #bd3c2a;
 }

@@ -13,6 +13,24 @@
     },
     {
         "age": 0,
+        "id": "PIO",
+        "typ": "exmst2",
+        "nazwa": "SE Piotrków 220/110kV"
+    },
+    {
+        "age": 0,
+        "id": "ZGI",
+        "typ": "exmst2",
+        "nazwa": "SE Zgierz 220/110kV"
+    },
+    {
+        "age": 0,
+        "id": "MSK",
+        "typ": "exmst2",
+        "nazwa": "SE Mościska 400/110kV"
+    },
+    {
+        "age": 0,
         "id": "ROG2",
         "typ": "utj",
         "nazwa": "SE Rogowiec 220kV"

@@ -9,12 +9,13 @@
           data: "=",
           label: "@",
           line: "@",
+          stacja: "@",
           onClick: "&"
         },
         link: function(scope, iElement, iAttrs) {
           var margin = {top: 0, right: 220, bottom: 20, left: 20},
               width = 960 - margin.left - margin.right,
-              height = 200 - margin.top - margin.bottom,
+              height = 220 - margin.top - margin.bottom,
               duration = 750;
               //rectW = 85,
               //rectH = 85;
@@ -70,15 +71,15 @@
             // in blur
             filter.append("feGaussianBlur")
                   .attr("in", "SourceAlpha")
-                  .attr("stdDeviation", 5)
+                  .attr("stdDeviation", 3)
                   .attr("result", "blur");
 
             // translate output of Gaussian blur to the right and downwards with 2px
             // store result in offsetBlur
             filter.append("feOffset")
                   .attr("in", "blur")
-                  .attr("dx", 5)
-                  .attr("dy", 5)
+                  .attr("dx", 4)
+                  .attr("dy", 4)
                   .attr("result", "offsetBlur");
 
             // overlay original SourceGraphic over translated blurred opacity by using
@@ -123,14 +124,6 @@
             d3.json(scope.line, function(json) {
               var nodes = tree.nodes(json);
 
-              var stac;
-              // Normalize for fixed-depth.
-              //nodes.forEach(function (d) {
-                //if (d.stacja != "") {
-                  // stac = d.stacja;
-                //};
-              //});
-              
               var node = svg.selectAll(".node")
                   .data(nodes)
                   .enter().append("g")
@@ -139,7 +132,7 @@
 
               // Add rectangles to nodes
               node.append("rect")
-                  .on("click", function(d){return scope.onClick({item: d});})
+                  .on("click", function(d){return scope.onClick({item: d, st: d.parent.stacja});})
                   .attr("width", Wrect)
                   .attr("height", Hrect)
                   //.attr("y", function (d) { 
@@ -147,7 +140,7 @@
                   //  })
                   //.attr("tooltip-append-to-body", true)
                   //.attr("tooltip", function(d){
-                  //    return d.typ;
+                    //  return d.typ;
                   //})
                   .attr("class", function (d) {
                       return "rect-" + d.typ;
@@ -166,23 +159,16 @@
                     return d.system;
                   });
 
-              /*node.append("text")
-                  .attr("x", 8)
-                  .attr("y", -18)
-                  .attr("dy", ".71em")
-                  .attr("class", "about typ")
-                  .text(function(d) { return d.typ; });*/
-
               //if (nodes.typ == 'cfe') {
-                  node.append("text")
-                      .attr("class", "cfe")
-                      .attr("x", 40)
-                      .attr("y", 20)
-                      .attr("dy", ".35em")
-                      .attr("text-anchor", "middle")
-                      .text(function (d) {
-                          return d.cfe + " " + d.port;
-                      });
+              node.append("text")
+                  .attr("class", "cfe")
+                  .attr("x", 40)
+                  .attr("y", 20)
+                  .attr("dy", ".35em")
+                  .attr("text-anchor", "middle")
+                  .text(function (d) {
+                      return d.cfe + " " + d.port;
+                  });
               //};
 
               node.append("text")
@@ -199,7 +185,25 @@
                   .attr("class", "about opis")
                   .text(function(d) { return d.opis; });
 
-              var link = svg.selectAll(".link")
+                node.append("ellipse")
+                    //.data(tree.links(nodes))
+                    .attr("cx", -250)
+                    .attr("cy", 19)
+                    .attr("rx", function (d) { if (d.typ == "wanbb") {return (30);} else {return 0;}})
+                    .attr("ry", function (d) { if (d.typ == "wanbb") {return (15);} else {return 0;}})
+                    .attr("stroke-width", 2)
+                    .attr("stroke", "#ee502a")
+                    .attr("fill", "#dc905e")
+                    .style("filter", "url(#drop-shadow)");
+
+                node.append("text")
+                    .attr("x", -272)
+                    .attr("y", 2)
+                    .attr("dy", "1.86em")
+                    .attr("class", "about ip")
+                    .text(function (d) { if (d.typ == "wanbb") {return "WAN BB";}});
+
+                var link = svg.selectAll(".link")
                   .data(tree.links(nodes));
 
               link.enter().insert("path", "g")
@@ -210,17 +214,16 @@
                   })
                   .style("filter", "url(#drop-shadow)");
 
-                function elbow(d, i) {
-                var Wd, Hd, k;
-                Wd = parseInt(node.select("rect").attr("width")); 
-                Hd = parseInt(node.select("rect").attr("height"));
-                k = (d.target.children ? 0 : i);
-                //console.log("source.x - " + d.source.x, "source.y - " + d.source.y, Wd, Hd, i);
-                //console.log("target.x - " + d.target.x, "target.y - " + d.target.y);
-                return "M" + (d.source.y + Wd) + "," + (d.source.x + (Hd /4) * (i + 1) )
-                     + "H" + (d.target.y - 240) + "V" + (d.target.x + Hd / 2 )
-                     //+ (d.target.children ? "" : "h" + 200); //margin.right);
-                     + "h" + 240;
+              function elbow(d, i) {
+                  var Wd, Hd;
+                  Wd = parseInt(node.select("rect").attr("width"));
+                  Hd = parseInt(node.select("rect").attr("height"));
+                    //k = (d.target.children ? 0 : i);
+                    //console.log("source.x - " + d.source.x, "source.y - " + d.source.y, Wd, Hd, i);
+                    //console.log("target.x - " + d.target.x, "target.y - " + d.target.y);
+                  return "M" + (d.source.y + Wd) + "," + (d.source.x + (Hd /4) * (i + 1) )
+                       + "H" + (d.target.y - 340) + "L" + (d.target.y - 300) + "," + (d.target.x + Hd / 2 )
+                       + "h" + 300;
               };
             
               function Wrect(d) {
@@ -237,17 +240,7 @@
                 if (d.typ == "utj" || d.typ == "convutj") {return 40};
               };
 
-              function typy (d) { return d.typ; };
-
             });
-              // Remove the directive, so $compile doesn't reset it
-              //iElement.removeAttr("d3-trees");
-
-              // Compile d3 code so that tooltip shows
-              //$compile(iElement)(scope);
-
-              // Re-add directive
-              //iElement.attr("d3-trees");
 
           };
         }

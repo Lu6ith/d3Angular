@@ -1,0 +1,72 @@
+{
+    "typ": "exmst2",
+    "stacja": "PIO",
+    "nazwa": "Piotrków",
+    "system": "EX MST2",
+    "terma": "",
+    "termb": "",
+    "cfe": "",
+    "port": "",
+    "linie": [
+        {
+            "typ": "cfe",
+            "terma": "PCM(1) 2/5",
+            "termb": "KDM B3 6/3",
+            "opis": "Dyster podstawowy",
+            "cfe": "CFE1",
+            "port": "2",
+            "adresrtu": [
+                {
+                    "port": "2",
+                    "adres": "35",
+                    "pred": "9600"
+                }
+            ]
+        },
+        {
+            "typ": "cfe",
+            "terma": "PCM(2) 10/3",
+            "termb": "KDM A4 8/5",
+            "opis": "Dyster rezerwowy",
+            "cfe": "CFE2",
+            "port": "2",
+            "adresrtu": [
+                {
+                    "port": "2",
+                    "adres": "35",
+                    "pred": "9600"
+                }
+            ]
+        },
+        {
+            "typ": "wanbb",
+            "terma": "PCM(2) 6/1",
+            "termb": "KDM A7 7/1",
+            "opis": "WindEx RCN",
+            "cfe": "",
+            "port": "1007",
+            "adresrtu": [
+                {
+                    "port": "1007",
+                    "adres": "172.30.142.101",
+                    "pred": "9600"
+                }
+            ]
+        },
+        {
+            "typ": "wanbb",
+            "terma": "PIOTRKÓW(1) 2/3",
+            "termb": "KDM B3 6/4",
+            "opis": "WindEx CN Bielawa",
+            "cfe": "",
+            "port": "1007",
+            "adresrtu": [
+                {
+                    "port": "1007",
+                    "adres": "172.30.142.101",
+                    "pred": "9600"
+                }
+            ]
+        }
+    ]
+}
