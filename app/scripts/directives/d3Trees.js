@@ -37,6 +37,8 @@
                 .attr("width", width + margin.left + margin.right)
                 .attr("height", height + margin.top + margin.bottom)
                 //.attr("class", " caption")
+                //.attr("data-title", "To jest tytuł !!!")
+                //.attr("data-description", "sd jnd lggf dfhghdfg sd fglkdf glkdf gfldskgldfgldfh dfh d")
                 .append("g")
                   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 

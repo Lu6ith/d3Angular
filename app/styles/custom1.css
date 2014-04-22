@@ -22,10 +22,10 @@ a img {
     position: relative;
     margin: 10px;
     overflow: hidden;
-    background: #000;
+    /*background: #000;*/
 }
 
-.caption rect {
+.caption svg {
     display: block;
     max-width: 100%;
     -webkit-transition: opacity 0.3s ease-in-out;
@@ -33,7 +33,7 @@ a img {
     transition: opacity 0.3s ease-in-out;
 }
 
-.caption:hover rect {
+.caption:hover svg {
     opacity: 0.5;
 }
 
