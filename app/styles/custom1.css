@@ -1,0 +1,95 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+body {
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+   /* color: #89867e;
+    background: #f9f9f9;*/
+}
+
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+a img {
+    border: none;
+}
+
+.caption {
+    -webkit-backface-visibility: hidden; /* prevent flash when embedding fiddle */
+    display: inline-block;
+    position: relative;
+    margin: 10px;
+    overflow: hidden;
+    background: #000;
+}
+
+.caption rect {
+    display: block;
+    max-width: 100%;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.caption:hover rect {
+    opacity: 0.5;
+}
+
+.caption::after,
+.caption::before {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    color: #1c1b28;
+    z-index: 1;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    -moz-transition: -moz-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+}
+
+.caption::after {
+    content: attr(data-title);
+    top: 0;
+    background: #0083ab;
+    font-size: 40px;
+    font-weight: 300;
+    padding: 30px;
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    transform: translateY(-100%);
+}
+
+.caption::before {
+    content: '...' attr(data-description) '...';
+    top: 50%;
+    background: #f27545;
+    font-size: 14px;
+    padding: 20px;
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    transform: translateY(100%);
+}
+
+.caption:hover::after,
+.caption:hover::before {
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    transform: translateY(0%);
+}
+
+div.tooltip {
+    display: block;
+    position: absolute;
+    text-align: center;
+    width: 120px;
+    height: 38px;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: #ded8ac;
+    border: 1px solid;
+    border-radius: 8px;
+    border-color: darkslategray;
+    pointer-events: none;
+}

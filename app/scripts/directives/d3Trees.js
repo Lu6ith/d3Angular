@@ -40,6 +40,11 @@
                 .append("g")
                   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+          var div = d3.select("body")
+                .append("div")
+                .attr("class", "tooltip")
+                .style("opacity", 0);
+
           // on window resize, re-render d3 canvas
           window.onresize = function() {
             return scope.$apply();
@@ -129,28 +134,38 @@
                   .data(nodes)
                   .enter().append("g")
                   .attr("class", "node") //caption
-                  .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
-                  .attr("data-title", "To jest tytuł !!!")
-                  .attr("data-description", "sd jnd lggf dfhghdfg sd fglkdf glkdf gfldskgldfgldfh dfh d");
+                  .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
+                  //.attr("data-title", "To jest tytuł !!!")
+                  //.attr("data-description", "sd jnd lggf dfhghdfg sd fglkdf glkdf gfldskgldfgldfh dfh d");
 
               // Add rectangles to nodes
-              node.append("rect")
+              var rectnd = node.append("rect")
                   .on("click", function(d){return scope.onClick({item: d, st: d.parent.stacja});})
                   .attr("width", Wrect)
                   .attr("height", Hrect)
-                  //.attr("y", function (d) { 
-                  //    if (d.typ == "cfe" || d.typ == "wanbb") {return 50};
-                  //  })
-                  //.attr("tooltip-append-to-body", true)
-                  //.attr("tooltip", function(d){
-                    //  return d.typ;
-                  //})
+                  .on("mouseover", function(d, i) {
+                      div.transition()
+                          .duration(200)
+                          .style("opacity", .9);
+                      div .html( "Kliknij po więcej informacji !")
+                          .style("left", (d3.event.pageX) + "px") //(d3.event.pageX) + "px")
+                          .style("top", (d3.event.pageY) + "px"); //(d3.event.pageY - 28) + "px");
+                      //console.log( rectnd[0][i].getScreenCTM().e, rectnd[0][i].getScreenCTM().f, rectnd[0][i].getCTM().e, rectnd[0][i].getCTM().f );
+                  })
+                  .on("mouseout", function(d) {
+                      div.transition()
+                          .duration(500)
+                          .style("opacity", 0);
+                  })
                   .attr("class", function (d) {
-                      return "rect-" + d.typ ;
+                      return "rect-" + d.typ;
                     })
                   .attr("stroke-width", 2)
                   .style("filter", "url(#drop-shadow)");
-                  
+
+                // var boxnode = node.node();
+                //var bbox = boxnode.getBBox();
+                //console.log(svg.select("rect").position());
 
               node.append("text")
                   .attr("class", "name")
