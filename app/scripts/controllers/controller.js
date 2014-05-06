@@ -7,7 +7,8 @@
         .controller('LineListCtrl', ['$scope', 'Line',
         function($scope, Line) {
             $scope.lines = Line.query();
-            $scope.orderProp = 'typ';
+            $scope.orderProp = ['typ', 'id'];
+            $scope.orderTyp = 'typ';
             //$scope.stacja = "@";
             $scope.d3OnClick = function(item, st){
                 //alert(item.typ + ' - ' + item.opis + '#modal' + item.stacja);

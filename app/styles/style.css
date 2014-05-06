@@ -6,6 +6,10 @@
 	fill: #6c9569;
 }
 
+.rect-abb {
+    fill: #5fc17d;
+}
+
 .rect-exmst2 {
 	fill: #2696d5;
 }
@@ -26,10 +30,14 @@
 	fill: #eea900;
 }
 
+.rect-opis {
+    fill: #f8efbc;
+}
+
 .link {
 	fill: none;
 	stroke: #acacac;
-	stroke-width: 1.5px;
+	stroke-width: 2px;
 }
 
 .link.cfe,

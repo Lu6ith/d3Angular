@@ -42,10 +42,21 @@
                 .append("g")
                   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-          var div = d3.select("body")
+          var tooltip = d3.select("body")
                 .append("div")
                 .attr("class", "tooltip")
                 .style("opacity", 0);
+
+          function getNodePos(el)
+          {
+                var body = d3.select('body').node();
+
+                for (var lx = 0, ly = 0;
+                     el != null && el != body;
+                     lx += (el.offsetLeft || el.clientLeft), ly += (el.offsetTop || el.clientTop), el = (el.offsetParent || el.parentNode))
+                    ;
+                return {x: lx, y: ly};
+          };
 
           // on window resize, re-render d3 canvas
           window.onresize = function() {
@@ -136,9 +147,20 @@
                   .data(nodes)
                   .enter().append("g")
                   .attr("class", "node") //caption
+                  /*.attr("data-title", "To jest tytuł !!!")
+                  .attr("data-description", "sd jnd lggf dfhghdfg sd fglkdf glkdf gfldskgldfgldfh dfh d")*/
                   .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
-                  //.attr("data-title", "To jest tytuł !!!")
-                  //.attr("data-description", "sd jnd lggf dfhghdfg sd fglkdf glkdf gfldskgldfgldfh dfh d");
+
+              // calculate most of the coordinates for tooltipping just once:
+              var root = d3.select("svg"); // WARNING: only works when the first SVG in the page is us!
+              var scr = { x: window.scrollX, y: window.scrollY, w: window.innerWidth, h: window.innerHeight };
+              // it's jolly rotten but <body> width/height can be smaller than the SVG it's carrying inside! :-((
+              var body_sel = d3.select('body');
+              // this is browser-dependent, but screw that for now!
+              var body = { w: body_sel.node().offsetWidth, h: body_sel.node().offsetHeight };
+              var doc = { w: document.width, h: document.height };
+              var svgpos = getNodePos(root.node());
+              var dist = { x: 10, y: 10 };
 
               // Add rectangles to nodes
               var rectnd = node.append("rect")
@@ -146,21 +168,36 @@
                   .attr("width", Wrect)
                   .attr("height", Hrect)
                   .on("mouseover", function(d, i) {
-                      div.transition()
-                          .duration(200)
-                          .style("opacity", .9);
-                      div .html( "Kliknij po więcej informacji !")
-                          .style("left", (d3.event.pageX) + "px") //(d3.event.pageX) + "px")
-                          .style("top", (d3.event.pageY) + "px"); //(d3.event.pageY - 28) + "px");
+                      tooltip.transition()
+                             .duration(200)
+                             .style("opacity", .9);
+                      tooltip.html( "Kliknij po więcej informacji !")
+                             .style("left", (d3.event.pageX + 4) + "px") //(d3.event.pageX) + "px")
+                             .style("top", (d3.event.pageY - 40) + "px"); //(d3.event.pageY - 28) + "px");
                       //console.log( rectnd[0][i].getScreenCTM().e, rectnd[0][i].getScreenCTM().f, rectnd[0][i].getCTM().e, rectnd[0][i].getCTM().f );
+                     /* var opis = d3.select("#group" + d.cfe + d.port);
+                      opis.transition()
+                          .duration(20)
+                          .style("opacity", .96)
+                          .transition()
+                          .duration(300)
+                          .attr("transform", "translate(-130, 0)");*/
                   })
                   .on("mouseout", function(d) {
-                      div.transition()
-                          .duration(500)
-                          .style("opacity", 0);
+                      tooltip.transition()
+                             .duration(500)
+                             .style("opacity", 0);
+                      /*var opis = d3.select("#group" + d.cfe + d.port);
+                      opis.transition()
+                          .duration(200)
+                          .style("opacity", 0)
+                          .transition()
+                          .duration(200)
+                          .attr("transform", "translate(0, 0)");*/
+                          //.attr("x", 80 + 10);
                   })
                   .attr("class", function (d) {
-                      return "rect-" + d.typ;
+                      return "rect-" + d.typ; // + " caption";
                     })
                   .attr("stroke-width", 2)
                   .style("filter", "url(#drop-shadow)");
@@ -187,11 +224,43 @@
                   .attr("dy", ".35em")
                   .attr("text-anchor", "middle")
                   .text(function (d) {
-                      return d.cfe + " " + d.port;
+                      return d.cfe + "  " + d.port;
                   });
               //};
 
-              node.append("text")
+
+/*
+                // Grupa opisowa
+                var groupop = node.append("g")
+                    .style("opacity", 0)
+                    .attr("id", function (d) {
+                        return "group" + d.cfe + d.port;
+                    });
+
+                groupop.append("rect")
+                    .attr("width", 3 * 80)
+                    .attr("height", 52)
+                    .attr("x", 80 + 10)
+                    .attr("y", -6)
+                    //.style("opacity", 0)
+                    .attr("class", function (d) {
+                        return "rect-opis rect-opis-" + d.cfe + d.port; // + " caption";
+                    })
+                    .attr("stroke-width", 2)
+                    .style("filter", "url(#drop-shadow)");
+
+                groupop.append("text")
+                    .attr("class", "name")
+                    .attr("x", 80 + 80)
+                    .attr("y", 20)
+                    .attr("dy", ".35em")
+                    .attr("text-anchor", "middle")
+                    .text(function (d) {
+                        return d.system;
+                    });
+*/
+
+                node.append("text")
                   .attr("x", -200)
                   .attr("y", 10)
                   .attr("dy", "1.86em")
@@ -200,7 +269,7 @@
 
               node.append("text")
                   .attr("x", -200)
-                  .attr("y", -4)
+                  .attr("y", -5)
                   .attr("dy", "1.86em")
                   .attr("class", "about opis")
                   .text(function(d) { return d.opis; });
@@ -231,8 +300,8 @@
                   .attr("d", elbow)
                   .attr("marker-end", function (d) {
                       return (d.target.typ == "cfe" ? "url(#arrowhead1)" : "url(#arrowhead2)");
-                  })
-                  .style("filter", "url(#drop-shadow)");
+                  });
+                  //.style("filter", "url(#drop-shadow)");
 
               function elbow(d, i) {
                   var Wd, Hd;
@@ -247,14 +316,14 @@
               };
             
               function Wrect(d) {
-                if (d.typ == "exmst2" || d.typ == 'mikro') {return 80};
+                if (d.typ == "exmst2" || d.typ == 'mikro' || d.typ == 'abb') {return 80};
                 if (d.typ == "cfe") {return 80};
                 if (d.typ == "wanbb") {return 80};
                 if (d.typ == "utj" || d.typ == "convutj") {return 80};
               };
 
               function Hrect(d) {
-                if (d.typ == "exmst2" || d.typ == 'mikro') {return 40};
+                if (d.typ == "exmst2" || d.typ == 'mikro' || d.typ == 'abb') {return 40};
                 if (d.typ == "cfe") {return 40};
                 if (d.typ == "wanbb") {return 40};
                 if (d.typ == "utj" || d.typ == "convutj") {return 40};

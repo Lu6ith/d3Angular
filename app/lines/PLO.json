@@ -1,0 +1,57 @@
+{
+    "typ": "mikro",
+    "stacja": "PLO",
+    "nazwa": "Płock",
+    "system": "MIKRO.K",
+    "terma": "",
+    "termb": "",
+    "cfe": "",
+    "port": "",
+    "linie": [
+        {
+            "typ": "cfe",
+            "terma": "PCM(2) 13/3",
+            "termb": "KDM A GÓRA 4/7",
+            "opis": "Dyster podstawowy",
+            "cfe": "CFE2",
+            "port": "15",
+            "adresrtu": [
+                {
+                    "port": "15",
+                    "adres": "1180",
+                    "pred": "9600"
+                }
+            ]
+        },
+        {
+            "typ": "cfe",
+            "terma": "PCM(1) 5/2",
+            "termb": "KDM B1 7/3",
+            "opis": "Dyster rezerwowy",
+            "cfe": "CFE1",
+            "port": "15",
+            "adresrtu": [
+                {
+                    "port": "15",
+                    "adres": "1180",
+                    "pred": "9600"
+                }
+            ]
+        },
+        {
+            "typ": "wanbb",
+            "terma": "SSiN IEC-104",
+            "termb": "",
+            "opis": "wezeł WAN BB",
+            "cfe": "",
+            "port": "1016",
+            "adresrtu": [
+                {
+                    "port": "1016",
+                    "adres": "172.27.196.101",
+                    "pred": "2MB"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,57 @@
+{
+    "typ": "abb",
+    "stacja": "ELK",
+    "nazwa": "EŁK",
+    "system": "ABB",
+    "terma": "",
+    "termb": "",
+    "cfe": "",
+    "port": "",
+    "linie": [
+        {
+            "typ": "cfe",
+            "terma": "PCM(2) 17/3",
+            "termb": "KDM B5 8/3",
+            "opis": "Dyster podstawowy",
+            "cfe": "CFE1",
+            "port": "8",
+            "adresrtu": [
+                {
+                    "port": "8",
+                    "adres": "1020",
+                    "pred": "1200"
+                }
+            ]
+        },
+        {
+            "typ": "cfe",
+            "terma": "PCM(2) 14/1",
+            "termb": "KDM A8 9/1",
+            "opis": "Dyster rezerwowy",
+            "cfe": "CFE2",
+            "port": "8",
+            "adresrtu": [
+                {
+                    "port": "8",
+                    "adres": "1020",
+                    "pred": "1200"
+                }
+            ]
+        },
+        {
+            "typ": "wanbb",
+            "terma": "SSiN IEC-104",
+            "termb": "",
+            "opis": "wezeł WAN BB",
+            "cfe": "",
+            "port": "1001",
+            "adresrtu": [
+                {
+                    "port": "1001",
+                    "adres": "172.30.185.103",
+                    "pred": "2MB"
+                }
+            ]
+        }
+    ]
+}

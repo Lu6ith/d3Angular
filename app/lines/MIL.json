@@ -1,0 +1,57 @@
+{
+    "typ": "mikro",
+    "stacja": "MIL",
+    "nazwa": "Miłosna",
+    "system": "MIKRO.P",
+    "terma": "",
+    "termb": "",
+    "cfe": "",
+    "port": "",
+    "linie": [
+        {
+            "typ": "cfe",
+            "terma": "PCM(1) 4/2",
+            "termb": "KDM B3 5/1",
+            "opis": "Dyster podstawowy",
+            "cfe": "CFE1",
+            "port": "6",
+            "adresrtu": [
+                {
+                    "port": "6",
+                    "adres": "1100",
+                    "pred": "9600"
+                }
+            ]
+        },
+        {
+            "typ": "cfe",
+            "terma": "PCM(2) 4/1",
+            "termb": "KDM A8 9/2",
+            "opis": "Dyster rezerwowy",
+            "cfe": "CFE2",
+            "port": "6",
+            "adresrtu": [
+                {
+                    "port": "6",
+                    "adres": "1100",
+                    "pred": "9600"
+                }
+            ]
+        },
+        {
+            "typ": "wanbb",
+            "terma": "SSiN IEC-104",
+            "termb": "",
+            "opis": "wezeł WAN BB",
+            "cfe": "",
+            "port": "1010",
+            "adresrtu": [
+                {
+                    "port": "1010",
+                    "adres": "172.27.193.89",
+                    "pred": "2MB"
+                }
+            ]
+        }
+    ]
+}

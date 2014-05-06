@@ -64,5 +64,41 @@
         "id": "SOC",
         "typ": "mikro",
         "nazwa": "SE Sochaczew 220/110kV"
+    },
+    {
+        "age": 0,
+        "id": "MIL",
+        "typ": "mikro",
+        "nazwa": "SE Miłosna 400/220/110kV"
+    },
+    {
+        "age": 0,
+        "id": "NAR",
+        "typ": "mikro",
+        "nazwa": "SE Narew 400/110kV"
+    },
+    {
+        "age": 0,
+        "id": "JAN",
+        "typ": "mikro",
+        "nazwa": "SE Janów 220/110kV"
+    },
+    {
+        "age": 0,
+        "id": "PLO",
+        "typ": "mikro",
+        "nazwa": "SE Płock 400/110kV"
+    },
+    {
+        "age": 0,
+        "id": "OLT",
+        "typ": "mikro",
+        "nazwa": "SE Ołtarzew 400/220/110kV"
+    },
+    {
+        "age": 0,
+        "id": "ELK",
+        "typ": "abb",
+        "nazwa": "SE Ełk 220/110kV"
     }
 ]

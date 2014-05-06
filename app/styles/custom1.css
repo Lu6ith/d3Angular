@@ -25,15 +25,16 @@ a img {
     /*background: #000;*/
 }
 
-.caption svg {
+.caption rect {
     display: block;
     max-width: 100%;
     -webkit-transition: opacity 0.3s ease-in-out;
     -moz-transition: opacity 0.3s ease-in-out;
     transition: opacity 0.3s ease-in-out;
+    cursor: pointer;
 }
 
-.caption:hover svg {
+.caption:hover rect {
     opacity: 0.5;
 }
 
