@@ -97,6 +97,18 @@
     },
     {
         "age": 0,
+        "id": "OST",
+        "typ": "mikro",
+        "nazwa": "SE Ostrołęka 220/110kV"
+    },
+    {
+        "age": 0,
+        "id": "STE",
+        "typ": "mikro",
+        "nazwa": "Ostrołęka STORA ENSO"
+    },
+    {
+        "age": 0,
         "id": "ELK",
         "typ": "abb",
         "nazwa": "SE Ełk 220/110kV"

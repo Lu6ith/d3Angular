@@ -1,0 +1,57 @@
+{
+    "typ": "mikro",
+    "stacja": "OST",
+    "nazwa": "Ostrołęka",
+    "system": "MIKRO.K",
+    "terma": "",
+    "termb": "",
+    "cfe": "",
+    "port": "",
+    "linie": [
+        {
+            "typ": "cfe",
+            "terma": "SNUS 6/1",
+            "termb": "KDM B7 8/2",
+            "opis": "Dyster podstawowy",
+            "cfe": "CFE1",
+            "port": "29",
+            "adresrtu": [
+                {
+                    "port": "29",
+                    "adres": "1230",
+                    "pred": "9600"
+                }
+            ]
+        },
+        {
+            "typ": "cfe",
+            "terma": "MXS19C 7/1",
+            "termb": "KDM B2 14/1",
+            "opis": "Dyster rezerwowy",
+            "cfe": "CFE2",
+            "port": "29",
+            "adresrtu": [
+                {
+                    "port": "29",
+                    "adres": "1230",
+                    "pred": "9600"
+                }
+            ]
+        },
+        {
+            "typ": "wanbb",
+            "terma": "SSiN IEC-104",
+            "termb": "",
+            "opis": "wezeł WAN BB",
+            "cfe": "",
+            "port": "1020",
+            "adresrtu": [
+                {
+                    "port": "1020",
+                    "adres": "172.27.236.102",
+                    "pred": "2MB"
+                }
+            ]
+        }
+    ]
+}
