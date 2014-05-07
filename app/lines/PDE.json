@@ -42,9 +42,28 @@
 			"typ": "wanbb",
 			"terma": "SSiN IEC-104",
 			"termb": "",
-			"opis": "wezeł WAN BB",
+			"opis": "węzeł WAN BB",
 			"cfe": "",
-			"port": "1002"
+			"port": "1002",
+            "adresrtu": [
+                {
+                    "port": "1002",
+                    "adres": "172.30.190.120",
+                    "pred": "2MB",
+                    "login": "exview",
+                    "passwd": "Podolszyce"
+                }
+            ],
+            "iec": [
+                {
+                    "nazwa": "KP/L1",
+                    "adres": "172.30.190.47"
+                },
+                {
+                    "nazwa": "KR/L1",
+                    "adres": "172.30.190.48"
+                }
+            ]
 		}
 	]
 }

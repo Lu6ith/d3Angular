@@ -261,14 +261,14 @@
 */
 
                 node.append("text")
-                  .attr("x", -200)
+                  .attr("x", -226)
                   .attr("y", 10)
                   .attr("dy", "1.86em")
                   .attr("class", "about terms")
                   .text(function(d) { return d.terma + " -> " + d.termb; });
 
               node.append("text")
-                  .attr("x", -200)
+                  .attr("x", -226)
                   .attr("y", -5)
                   .attr("dy", "1.86em")
                   .attr("class", "about opis")
@@ -276,7 +276,7 @@
 
                 node.append("ellipse")
                     //.data(tree.links(nodes))
-                    .attr("cx", -250)
+                    .attr("cx", -280)
                     .attr("cy", 19)
                     .attr("rx", function (d) { if (d.typ == "wanbb") {return (30);} else {return 0;}})
                     .attr("ry", function (d) { if (d.typ == "wanbb") {return (15);} else {return 0;}})
@@ -286,7 +286,7 @@
                     .style("filter", "url(#drop-shadow)");
 
                 node.append("text")
-                    .attr("x", -272)
+                    .attr("x", -302)
                     .attr("y", 2)
                     .attr("dy", "1.86em")
                     .attr("class", "about ip")
@@ -311,8 +311,8 @@
                     //console.log("source.x - " + d.source.x, "source.y - " + d.source.y, Wd, Hd, i);
                     //console.log("target.x - " + d.target.x, "target.y - " + d.target.y);
                   return "M" + (d.source.y + Wd) + "," + (d.source.x + (Hd /4) * (i + 1) )
-                       + "H" + (d.target.y - 340) + "L" + (d.target.y - 300) + "," + (d.target.x + Hd / 2 )
-                       + "h" + 300;
+                       + "H" + (d.target.y - 390) + "L" + (d.target.y - 350) + "," + (d.target.x + Hd / 2 )
+                       + "h" + 350;
               };
             
               function Wrect(d) {

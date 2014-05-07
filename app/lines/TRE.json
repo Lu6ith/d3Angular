@@ -42,9 +42,28 @@
 			"typ": "wanbb",
 			"terma": "SSiN IEC-104",
 			"termb": "",
-			"opis": "wezeł WAN BB",
+			"opis": "węzeł WAN BB",
 			"cfe": "",
-			"port": "1005"
+			"port": "1005",
+            "adresrtu": [
+                {
+                    "port": "1005",
+                    "adres": "172.27.182.118",
+                    "pred": "2MB",
+                    "login": "exview",
+                    "passwd": "Trebaczew"
+                }
+            ],
+            "iec": [
+                {
+                    "nazwa": "KP/L1",
+                    "adres": "172.30.182.114"
+                },
+                {
+                    "nazwa": "KR/L1",
+                    "adres": "172.30.182.116"
+                }
+            ]
 		}
 	]
 }

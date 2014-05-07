@@ -42,14 +42,26 @@
             "typ": "wanbb",
             "terma": "SSiN IEC-104",
             "termb": "",
-            "opis": "wezeł WAN BB",
+            "opis": "węzeł WAN BB",
             "cfe": "",
             "port": "1013",
             "adresrtu": [
                 {
                     "port": "1013",
                     "adres": "172.27.169.101",
-                    "pred": "2MB"
+                    "pred": "2MB",
+                    "login": "n/a",
+                    "passwd": "n/a"
+                }
+            ],
+            "iec": [
+                {
+                    "nazwa": "KP/L1",
+                    "adres": "172.27.169.105"
+                },
+                {
+                    "nazwa": "KR/L1",
+                    "adres": "172.27.169.106"
                 }
             ]
         }

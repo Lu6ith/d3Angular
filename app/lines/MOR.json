@@ -42,14 +42,26 @@
             "typ": "wanbb",
             "terma": "SSiN IEC-104",
             "termb": "",
-            "opis": "wezeł WAN BB",
+            "opis": "węzeł WAN BB",
             "cfe": "",
             "port": "1008",
             "adresrtu": [
                 {
                     "port": "1008",
                     "adres": "172.30.140.119",
-                    "pred": "2MB"
+                    "pred": "2MB",
+                    "login": "syndis",
+                    "passwd": "syndis"
+                }
+            ],
+            "iec": [
+                {
+                    "nazwa": "KP/L1",
+                    "adres": "172.30.140.105"
+                },
+                {
+                    "nazwa": "KR/L1",
+                    "adres": "172.30.140.106"
                 }
             ]
         }

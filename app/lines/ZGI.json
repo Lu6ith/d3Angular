@@ -42,14 +42,26 @@
             "typ": "wanbb",
             "terma": "SSiN IEC-104",
             "termb": "",
-            "opis": "wezeł WAN BB",
+            "opis": "węzeł WAN BB",
             "cfe": "",
             "port": "1004",
             "adresrtu": [
                 {
                     "port": "1004",
                     "adres": "172.30.197.51",
-                    "pred": "2MB"
+                    "pred": "2MB",
+                    "login": "exview",
+                    "passwd": "Zgierz"
+                }
+            ],
+            "iec": [
+                {
+                    "nazwa": "KP/L1",
+                    "adres": "172.30.197.43"
+                },
+                {
+                    "nazwa": "KR/L1",
+                    "adres": "172.30.197.45"
                 }
             ]
         }
